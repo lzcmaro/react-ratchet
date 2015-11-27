@@ -2,8 +2,10 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 //components
-const Bar = require('../../src/Bar');
+const NavBar = require('../../src/NavBar');
 const Button = require('../../src/Button');
+const Badge = require('../../src/Badge');
+const Icon = require('../../src/Icon');
 
 import babel from 'babel-core/browser';
 

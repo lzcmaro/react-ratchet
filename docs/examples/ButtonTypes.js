@@ -1,15 +1,14 @@
 const buttonsInstance = (
   <div>
-    <Button icon="icon-search">Default</Button>
-    <Button type="submit">SubmitButton</Button>
-    <Button type="reset" disabled>ResetButton</Button>
-    <Button className="btn-primary">primary</Button>
-    <Button className="btn-positive">positive</Button>
-    <Button className="btn-negative">negative</Button>
-    <Button className="btn-link">link</Button>
-    <Button className="btn-outlined">outlined</Button>
-    <Button href="http://www.mysoft.com.cn">链接</Button>
-    <Button href="">空链接</Button>
+    <Button>Button</Button>
+    <Button className="btn-primary">Button</Button>
+    <Button className="btn-positive">Button</Button>
+    <Button className="btn-negative">Button</Button>
+    <Button className="btn-link">Button</Button>
+    <Button className="btn-outlined">Button</Button>
+    <Button className="btn-primary btn-outlined">Button</Button>
+    <Button className="btn-positive btn-outlined">Button</Button>
+    <Button className="btn-negative btn-outlined">Button</Button>
   </div>
 );
 

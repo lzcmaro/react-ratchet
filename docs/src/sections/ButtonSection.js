@@ -6,7 +6,7 @@ export default function ButtonSection() {
 
 	return (
 		<div>
-			<ReactPlayground domId="buttons" title='Buttons' desc='按钮演示' codeText={Samples.ButtonTypes} />
+			<ReactPlayground domId="buttons" title='Buttons' desc='按钮' codeText={Samples.ButtonTypes} />
 		</div>
 	);
 

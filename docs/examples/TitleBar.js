@@ -1,1 +1,1 @@
-ReactDOM.render(<Bar title="Title"></Bar>, mountNode);
+ReactDOM.render(<NavBar>Title</NavBar>, mountNode);

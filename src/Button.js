@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Icon from './Icon';
+import Badge from './Badge';
 
 let Button = React.createClass ({
 	propTypes: {
@@ -21,32 +22,36 @@ let Button = React.createClass ({
     },
 
     renderAnchor(){
-        let Component = 'a';
+        let Component = this.props.eleType || 'a';
         let href = this.props.href || 'javascript:;';
-        let isIconButton = !!this.props.icon;
+        let hasIcon = !!this.props.icon;
+        let hasBadge = !!this.props.badgeText;
 
         return (
             <Component
                 {...this.props}
                 href= {href}
                 className = {classNames('btn',this.props.className)}>
-                {isIconButton ? <Icon icon={this.props.icon} /> : null }
+                {hasIcon ? <Icon className={this.props.icon} /> : null }
                 {this.props.children}
+                {hasBadge ? <Badge className={this.props.badge}>{this.props.badgeText}</Badge> : null }
             </Component>
         )
     },
 
     renderButton(){
-        let Component = 'button';
-        let isIconButton = !!this.props.icon;
+        let Component = this.props.eleType || 'button';
+        let hasIcon = !!this.props.icon;
+        let hasBadge = !!this.props.badgeText;
 
         return (
             <Component
                 {...this.props}
                 type={this.props.type || 'button'}
                 className = {classNames('btn',this.props.className)}>
-                {isIconButton ? <Icon icon={this.props.icon} /> : null }
+                {hasIcon ? <Icon className={this.props.icon} /> : null }
                 {this.props.children}
+                {hasBadge ? <Badge className={this.props.badge}>{this.props.badgeText}</Badge> : null }
             </Component>
         )
     }

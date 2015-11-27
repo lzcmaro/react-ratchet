@@ -756,8 +756,8 @@ code {
 #buttonsInDevice .btn,
 #buttonsBadgesInDevice .btn,
 #buttonsWithIconsInDevice .btn {
-  display: block;
   margin-top: 10px;
+  margin-right: 100px;
   margin-left: 10px;
 }
 

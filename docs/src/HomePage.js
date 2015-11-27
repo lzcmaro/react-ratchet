@@ -4,6 +4,10 @@ import PageHeader from './PageHeader';
 
 import BarSection from './sections/BarSection';
 import ButtonSection from './sections/ButtonSection';
+import ButtonsWithIconsSection from './sections/ButtonsWithIconsSection';
+import ButtonsBadgesSection from './sections/ButtonsBadgesSection';
+import BadgeSection from './sections/BadgeSection';
+import IconSection from './sections/IconSection';
 
 class HomePage extends React.Component {
 
@@ -29,6 +33,10 @@ class HomePage extends React.Component {
 			            	{/* sections */}
 			            	<BarSection/>
 			            	<ButtonSection/>
+			            	<ButtonsWithIconsSection/>
+			            	<ButtonsBadgesSection/>
+			            	<BadgeSection/>
+			            	<IconSection/>
 			            </div>	
 					</div>	
 				</div>
