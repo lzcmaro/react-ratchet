@@ -1,0 +1,10 @@
+*~
+.DS_Store
+npm-debug.log
+node_modules
+dist/
+!tools/dist/
+lib/
+!tools/lib/
+docs-built/
+.babel-cache/

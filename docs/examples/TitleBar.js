@@ -1,0 +1,1 @@
+ReactDOM.render(<Bar title="Title"></Bar>, mountNode);
