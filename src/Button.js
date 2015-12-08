@@ -2,59 +2,66 @@ import React from 'react';
 import classNames from 'classnames';
 import Icon from './Icon';
 import Badge from './Badge';
+import {classesDecorator, stylesDecorator} from './utils/componentDecorators';
+import ratchetUtils from './utils/ratchetUtils';
+import {BUTTON_STYLES} from './utils/styleMaps';
 
 let Button = React.createClass ({
 	propTypes: {
+        block:React.PropTypes.bool,
         href: React.PropTypes.string,
         target: React.PropTypes.string,
         type: React.PropTypes.oneOf(['button', 'reset', 'submit'])
 	},
 	getDefaultProps() {
 		return{
-			
+			block:false,
+            outlined:false
 		};
 	},
 
     render() {
+        let classes = ratchetUtils.getClassSet(this.props);
+        let blockClass = ratchetUtils.prefix(this.props,'block');
+        let outlinedClass = ratchetUtils.prefix(this.props,'outlined');
         let renderFuncName;
-        renderFuncName = this.props.href==='' || this.props.href || this.props.target ? 'renderAnchor' : 'renderButton';
-        return this[renderFuncName]();
+
+        classes = {
+            ...classes,
+            [blockClass]:this.props.block,
+            [outlinedClass]:this.props.outlined
+        };
+
+        renderFuncName = this.props.ratStyle === BUTTON_STYLES.LINK || this.props.href === '' || this.props.href || this.props.target ? 'renderAnchor' : 'renderButton';
+        return this[renderFuncName](classes);
     },
 
-    renderAnchor(){
+    renderAnchor(classes){
         let Component = this.props.eleType || 'a';
         let href = this.props.href || 'javascript:;';
-        let hasIcon = !!this.props.icon;
-        let hasBadge = !!this.props.badgeText;
 
         return (
             <Component
                 {...this.props}
                 href= {href}
-                className = {classNames('btn',this.props.className)}>
-                {hasIcon ? <Icon className={this.props.icon} /> : null }
+                className = {classNames(classes,this.props.className)}>
                 {this.props.children}
-                {hasBadge ? <Badge className={this.props.badge}>{this.props.badgeText}</Badge> : null }
             </Component>
         )
     },
 
-    renderButton(){
-        let Component = this.props.eleType || 'button';
-        let hasIcon = !!this.props.icon;
-        let hasBadge = !!this.props.badgeText;
+    renderButton(classes){
+        let Component = this.props.eleType || 'button'; 
 
         return (
             <Component
                 {...this.props}
                 type={this.props.type || 'button'}
-                className = {classNames('btn',this.props.className)}>
-                {hasIcon ? <Icon className={this.props.icon} /> : null }
+                className = {classNames(classes,this.props.className)}>
                 {this.props.children}
-                {hasBadge ? <Badge className={this.props.badge}>{this.props.badgeText}</Badge> : null }
             </Component>
         )
     }
 });
 
-export default Button;
+export default stylesDecorator(BUTTON_STYLES.values(), classesDecorator('btn',Button));

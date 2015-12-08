@@ -3,9 +3,28 @@ const ReactDOM = require('react-dom');
 
 //components
 const NavBar = require('../../src/NavBar');
+const NavButton = require('../../src/NavButton');
+const TabBar = require('../../src/TabBar');
+const StandardBar = require('../../src/StandardBar');
+const SegmentedControl = require('../../src/SegmentedControl');
+const Link = require('../../src/Link');
+const Form = require('../../src/Form');
+const FormButton = require('../../src/FormButton');
+const Input = require('../../src/Input');
+const List = require('../../src/List');
+const ListItem = require('../../src/ListItem');
+const ListNav = require('../../src/ListNav');
+const Card = require('../../src/Card');
+const Media = require('../../src/Media');
 const Button = require('../../src/Button');
+const Toggle = require('../../src/Toggle');
 const Badge = require('../../src/Badge');
 const Icon = require('../../src/Icon');
+const NavPopover = require('../../src/NavPopover');
+const Modal = require('../../src/Modal');
+const Slider = require('../../src/Slider');
+const SliderItem = require('../../src/SliderItem');
+
 
 import babel from 'babel-core/browser';
 
@@ -43,7 +62,7 @@ const ReactPlayground = React.createClass ({
 
 	    	const compiledCode = this.props.transformer(this.props.codeText);
 
-	    	//console.log( compiledCode );
+	    	// console.log( compiledCode );
 
 	    	eval(compiledCode);
 
@@ -55,7 +74,9 @@ const ReactPlayground = React.createClass ({
 	render() {
 		return (
 			
-			<article id={this.props.domId} className="component">
+			<article 
+				{ ...this.props }
+				className="component">
                 <h3 className="component-title">{this.props.title}</h3>
                 <p className="component-description">{this.props.desc}</p>
                 <div className="component-example component-example-fullbleed">

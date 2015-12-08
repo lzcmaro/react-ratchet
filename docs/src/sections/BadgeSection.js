@@ -6,7 +6,7 @@ export default function BadgeSection() {
 
     return (
         <div>
-            <ReactPlayground domId="badges" title='Badges' desc='标记' codeText={Samples.Badge} />
+            <ReactPlayground id="badges" title='Badges' desc='标记' codeText={Samples.Badge} />
         </div>
     );
 

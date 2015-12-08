@@ -1,14 +1,14 @@
 const buttonsInstance = (
   <div>
     <Button>Button</Button>
-    <Button className="btn-primary">Button</Button>
-    <Button className="btn-positive">Button</Button>
-    <Button className="btn-negative">Button</Button>
-    <Button className="btn-link">Button</Button>
-    <Button className="btn-outlined">Button</Button>
-    <Button className="btn-primary btn-outlined">Button</Button>
-    <Button className="btn-positive btn-outlined">Button</Button>
-    <Button className="btn-negative btn-outlined">Button</Button>
+    <Button ratStyle="primary">Button</Button>
+    <Button ratStyle="positive">Button</Button>
+    <Button ratStyle="negative">Button</Button>
+    <Button ratStyle="link">Button</Button>
+    <Button outlined>Button</Button>
+    <Button ratStyle="primary" outlined>Button</Button>
+    <Button ratStyle="positive" outlined>Button</Button>
+    <Button ratStyle="negative" outlined>Button</Button>
   </div>
 );
 

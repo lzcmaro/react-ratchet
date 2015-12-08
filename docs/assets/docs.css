@@ -797,15 +797,12 @@ code {
   cursor: pointer;
 }
 
-#popoversInDevice #iwindow:before {
+/*#popoversInDevice #iwindow {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 11;
-  content: '';
-  background-color: rgba(0, 0, 0, .3);
 }
 
 @media screen and (min-width: 768px) {
@@ -814,8 +811,9 @@ code {
     top: 72px;
     display: block;
     opacity: 1;
+
   }
-}
+}*/
 #modalsInDevice #iwindow > .btn {
   margin: 10px;
 }
@@ -860,7 +858,7 @@ code {
     height: 813px;
     margin-left: -20px;
     font-family: "Helvetica Neue", sans-serif;
-    background-image: url("./device-sprite.png");
+    background-image: url("/assets/device-sprite.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     -webkit-background-size: 300% 300%;
@@ -887,16 +885,23 @@ code {
   }
 
   .device .content,
-  .device .bar,
-  .device .modal {
+  .device .bar {
     position: absolute;
   }
 
+  .modal-content .bar{
+    position: static;
+  }
+
+  .popover-content .bar{
+    position: static;
+  }
+
   .device .content {
-    top: 44px;
+    /*top: 44px;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;*/
   }
 }
 @media screen and (min-width: 1200px) {
@@ -2091,3 +2096,4 @@ hr {
 .browser-support-no {
   background-color: #f44;
 }
+

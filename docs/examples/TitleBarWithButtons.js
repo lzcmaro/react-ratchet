@@ -1,8 +1,8 @@
 const buttonsInstance = (
   <div>
     <NavBar>
-        <Button className="pull-left">Left</Button>
-        <Button className="pull-right">Right</Button>
+        <NavButton left>Left</NavButton>
+        <NavButton right>Right</NavButton>
         Title
     </NavBar>
   </div>

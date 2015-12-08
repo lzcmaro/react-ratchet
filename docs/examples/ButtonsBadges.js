@@ -1,14 +1,14 @@
 const buttonsBadgesInstance = (
   <div>
-    <Button badgeText="1">Button</Button>
-    <Button className="btn-primary" badge="badge-primary" badgeText="1">Button</Button>
-    <Button className="btn-positive" badge="badge-positive" badgeText="1">Button</Button>
-    <Button className="btn-negative" badge="badge-negative" badgeText="1">Button</Button>
+    <Button>Button <Badge>1</Badge></Button>
+    <Button ratStyle="primary">Button <Badge ratStyle="primary">1</Badge></Button>
+    <Button ratStyle="positive">Button <Badge ratStyle="positive">1</Badge></Button>
+    <Button ratStyle="negative">Button <Badge ratStyle="negative">1</Badge></Button>
 
-    <Button className="btn-outlined" badge="badge-inverted" badgeText="1">Button</Button>
-    <Button className="btn-primary btn-outlined" badge="badge-primary badge-inverted" badgeText="1">Button</Button>
-    <Button className="btn-positive btn-outlined" badge="badge-positive badge-inverted" badgeText="1">Button</Button>
-    <Button className="btn-negative btn-outlined" badge="badge-negative badge-inverted" badgeText="1">Button</Button>
+    <Button outlined>Button <Badge inverted>1</Badge></Button>
+    <Button ratStyle="primary" outlined>Button <Badge ratStyle="primary" inverted>1</Badge></Button>
+    <Button ratStyle="positive" outlined>Button <Badge ratStyle="positive" inverted>1</Badge></Button>
+    <Button ratStyle="negative" outlined>Button <Badge ratStyle="negative" inverted>1</Badge></Button>
   </div>
 );
 

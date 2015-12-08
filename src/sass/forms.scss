@@ -68,15 +68,18 @@ select {
 }
 
 
+.form{}
+
 // Input groups (cluster multiple inputs together into a single group)
 // -------------------------------------------------------------------
 
-// Remove spacing, borders, shadows and rounding since it all belongs on the .input-group not the input
-.input-group {
+// Remove spacing, borders, shadows and rounding since it all belongs on the .form-list not the input
+.form-listview {
   background-color: #fff;
 }
-.input-group input,
-.input-group textarea {
+.form-listview input:not(.btn),
+.form-listview textarea {
+  padding: 0 15px;
   margin-bottom: 0;
   background-color: transparent;
   border-top: 0;
@@ -89,15 +92,15 @@ select {
 // Input groups with labels
 // --------------------------------------------------
 
-// To use labels with input groups, wrap a label and an input in an .input-row
-.input-row {
+// To use labels with input groups, wrap a label and an input in an .input-group
+.form-listview .input-group {
   overflow: hidden;
   height: 35px; // Matches the height of inputs.
   border-bottom: $border-default;
 }
 
 // Labels get floated left with a set percentage width
-.input-row label {
+.form-listview .input-group label {
   float: left;
   width: 35%;
   padding: 8px 15px;
@@ -106,7 +109,7 @@ select {
 }
 
 // Actual inputs float to right of labels and also have a set percentage
-.input-row input {
+.form-listview .input-group input {
   float: right;
   width: 65%;
   padding-left: 0;

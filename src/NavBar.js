@@ -1,40 +1,54 @@
 import React from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
+import {classesDecorator, stylesDecorator} from './utils/componentDecorators';
+import ratchetUtils from './utils/ratchetUtils';
+import {BAR_STYLES} from './utils/styleMaps';
+import NavTitle from './NavTitle';
 
-let NavBar = React.createClass ({
-	propTypes: {
-		
-	},
-	getDefaultProps() {
-		
-	},
+
+@stylesDecorator(BAR_STYLES.values(), 'nav')
+@classesDecorator('bar')
+class NavBar extends React.Component {
+	
     render() {
-    	let title, children = this.props.children;
+    	let title, 
+            children = this.props.children,
+            classes = ratchetUtils.getClassSet(this.props),
+            child;
+
+        // console.log( "classes", classes );
 
     	//从this.props.children取出navbar的title，在渲染时，方便添加特定样式
-    	if( children instanceof Array){
+    	if( Array.isArray(children) ){
 
     		for (var i = 0; i < children.length; i++) {
-    			if( typeof children[i] === 'string' ){
-    				title = children[i];
+                child = children[i];
+    			if( typeof child === 'string' ){
+    				title = child;
     				children.splice(i, 1);
-    				break;
-    			}
-    			
+                    break;
+    			}		
     		};
 
     	}else{
-    		title = children;
-    		children = null;
+            //子节点只有一个的时候，且是string，把它设为title
+            if( typeof children === 'string' ){
+                title = children;
+                children = null;
+            } 		
     	}  	
 
         return ( 
-        	<nav className = {classNames('bar', 'bar-nav', this.props.className)}>
+        	<nav 
+              { ...this.props }
+              className = { classnames(classes, this.props.className) }>
 			  { children }
-			  <h1 className="title">{ title }</h1>
+			  { title ? <NavTitle>{ title }</NavTitle>  : null }
 			</nav>
         )
     }
-});
+}
+
+NavBar.Title = NavTitle;
 
 export default NavBar;

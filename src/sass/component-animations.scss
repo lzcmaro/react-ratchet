@@ -1,0 +1,12 @@
+//
+// Component animations
+// --------------------------------------------------
+
+
+.fade {
+  opacity: 0;
+  @include transition(opacity .25s linear);
+  &.in {
+    opacity: 1;
+  }
+}

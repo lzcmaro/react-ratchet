@@ -2,20 +2,34 @@
 // Popovers (to be used with popovers.js)
 // --------------------------------------------------
 
+.popover-backdrop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0,0,0,.3);
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.in { opacity: .5; }
+}
+
 .popover {
   position: fixed;
   top: 55px;
   left: 50%;
-  z-index: 20;
-  display: none;
   width: 280px;
   margin-left: -140px;
   background-color: $chrome-color;
   border-radius: $border-radius;
-  opacity: 0;
-  @include box-shadow(0 0 15px rgba(0, 0, 0, .1));
-  @include transform(translate3d(0, -15px, 0));
-  @include transition(all .25s linear);
+  z-index: 11;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
 
   // Caret on top of popover using CSS triangles (thanks to @chriscoyier for solution)
   &:before {
@@ -30,38 +44,84 @@
     border-bottom: 15px solid $chrome-color;
     border-left: 15px solid transparent;
   }
-
-  // Popover transition
-  // --------------------------------------------------
-
-  &.visible {
-    opacity: 1;
-    @include transform(translate3d(0, 0, 0));
-  }
-
-  // Give correct spacing to the content if there is a bar inside the popover.
-  .bar ~ .table-view {
-    padding-top: $bar-base-height;
-  }
 }
 
-// Backdrop (used as invisible touch escape)
-// --------------------------------------------------
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 15;
-  background-color: rgba(0,0,0,.3);
+.popover-content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+  z-index: 12;
 }
+
+
+// .popover {
+//   position: fixed;
+//   top: 55px;
+//   left: 50%;
+//   z-index: 20;
+//   width: 280px;
+//   margin-left: -140px;
+//   background-color: $chrome-color;
+//   border-radius: $border-radius;
+//   opacity: 0;
+//   @include box-shadow(0 0 15px rgba(0, 0, 0, .1));
+//   @include transform(translate3d(0, -15px, 0));
+
+//   // Caret on top of popover using CSS triangles (thanks to @chriscoyier for solution)
+//   &:before {
+//     position: absolute;
+//     top: -15px;
+//     left: 50%;
+//     width: 0;
+//     height: 0;
+//     margin-left: -15px;
+//     content: '';
+//     border-right: 15px solid transparent;
+//     border-bottom: 15px solid $chrome-color;
+//     border-left: 15px solid transparent;
+//   }
+
+//   // Popover transition
+//   // --------------------------------------------------
+
+//   &.visible {
+//     opacity: 1;
+//     @include transform(translate3d(0, 0, 0));
+//     @include transition(all .25s ease-in);
+//   }
+
+//   // Give correct spacing to the content if there is a bar inside the popover.
+//   .bar ~ .table-view {
+//     padding-top: $bar-base-height;
+//   }
+// }
+
+// // Backdrop (used as invisible touch escape)
+// // --------------------------------------------------
+
+// .popover-backdrop {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 15;
+//   background-color: rgba(0,0,0,.3);
+//   opacity: 0;
+
+//   &.visible {
+//     opacity: 1;
+//     @include transition(opacity .15s ease-out);
+//   }
+// }
 
 // Block level buttons in popovers
 // --------------------------------------------------
 
-.popover .btn-block {
+.popover-content .btn-block {
   margin-bottom: 5px;
 
   // Remove extra margin on bottom of last button
@@ -74,7 +134,8 @@
 // Popovers with nav bars
 // --------------------------------------------------
 
-.popover .bar-nav {
+.popover-content .bar-nav {
+  position: static;
   border-bottom: $border-default;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -85,7 +146,7 @@
 // Table views in popovers
 // --------------------------------------------------
 
-.popover .table-view {
+.popover-content .table-view {
   max-height: 300px;
   margin-bottom: 0;
   overflow: auto;

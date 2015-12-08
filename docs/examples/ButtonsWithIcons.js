@@ -1,10 +1,10 @@
 const buttonsWithIconsInstance = (
   <div>
-    <Button icon="icon-search">Button</Button>
-    <Button className="btn-primary" icon="icon-search">Button</Button>
-    <Button className="btn-positive" icon="icon-search">Button</Button>
-    <Button className="btn-negative" icon="icon-search">Button</Button>
-    <Button className="btn-link" icon="icon-left">Button</Button>
+    <Button><Icon ratStyle="search"/>Button</Button>
+    <Button ratStyle="primary"><Icon ratStyle="search"/>Button</Button>
+    <Button ratStyle="positive"><Icon ratStyle="search"/>Button</Button>
+    <Button ratStyle="negative"><Icon ratStyle="search"/>Button</Button>
+    <Button ratStyle="link"><Icon ratStyle="left"/>Button</Button>
   </div>
 );
 

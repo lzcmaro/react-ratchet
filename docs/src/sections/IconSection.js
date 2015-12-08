@@ -6,7 +6,7 @@ export default function IconSection() {
 
     return (
         <div>
-            <ReactPlayground domId="ratchicons" title='Ratchicons' desc='字符图标' codeText={Samples.Icon} />
+            <ReactPlayground id="ratchicons" title='Ratchicons' desc='字符图标' codeText={Samples.Icon} />
         </div>
     );
 

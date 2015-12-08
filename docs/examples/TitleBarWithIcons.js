@@ -1,8 +1,8 @@
 const buttonsInstance = (
   <div>
     <NavBar>
-        <Icon className="icon-left-nav pull-left" />
-        <Icon className="icon-compose pull-right" />
+        <Link left icon="left-nav" href="#" />
+        <Link right icon="compose" href="#" />
         Title
     </NavBar>
   </div>
