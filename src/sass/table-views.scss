@@ -7,7 +7,7 @@
   margin-top: 0;
   margin-bottom: 15px;
   list-style: none; // Remove usual bullet styles from table view
-  background-color: #fff;
+  background-color: $chrome-color;
   border-top: $border-default;
   border-bottom: $border-default;
 }
@@ -18,13 +18,15 @@
   padding: 11px 65px 11px 15px;
   overflow: hidden;
   border-bottom: $border-default;
+  color: $font-color-default;
+  font-size: 16px;
 
   // Remove the border from the last table view item
   &:last-child {
     border-bottom: 0;
   }
   // If it's a table view of links, make sure the child <a> takes up full table view item tap area (want to avoid selecting child buttons though)
-  > a:not(.btn) {
+  > .link {
     position: relative;
     display: block;
     padding: inherit;
@@ -100,9 +102,13 @@
       right: 35px;
     }
   }
+
+  > .btn {
+    padding: 7px 8px;
+  }
 }
 
 // If the table view is the first component, give it extra margin on top.
-.content > .table-view:first-child {
-  margin-top: 15px;
-}
+// .content > .table-view:first-child {
+//   margin-top: 15px;
+// }

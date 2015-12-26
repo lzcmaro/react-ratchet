@@ -26,6 +26,7 @@ body {
 // Universal link styling
 a {
   color: $primary-color;
+  font-size: $font-size-default;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0); // Removes the dark touch outlines on links in webkit browsers.
 
@@ -34,52 +35,52 @@ a {
   }
 }
 
-// Wrapper to be used around all content not in .bar-title and .bar-tab
-.content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  background-color: #fff;
-  -webkit-overflow-scrolling: touch;
-}
+// // Wrapper to be used around all content not in .bar-title and .bar-tab
+// .content {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   overflow: auto;
+//   background-color: #fff;
+//   -webkit-overflow-scrolling: touch;
+// }
 
-// Hack to force all relatively and absolutely positioned elements still render while scrolling
-// Note: This is a bug for "-webkit-overflow-scrolling: touch"
-.content > * {
-  @include transform(translateZ(0));
-}
+// // Hack to force all relatively and absolutely positioned elements still render while scrolling
+// // Note: This is a bug for "-webkit-overflow-scrolling: touch"
+// .content > * {
+//   @include transform(translateZ(0));
+// }
 
 // Pad top/bottom of content so it doesn't hide behind bars.
 // Note: For these to work, content must come after both bars in the markup
-.bar-nav ~ .content {
-  padding-top: $bar-base-height;
-}
-.bar-header-secondary ~ .content {
-  padding-top: ($bar-base-height*2);
-}
+// .bar-nav ~ .content {
+//   margin-top: $bar-base-height;
+// }
+// .bar-header-secondary ~ .content {
+//   margin-top: ($bar-base-height*2);
+// }
 
-// Footer bar padding
-.bar-footer ~ .content {
-  padding-bottom: $bar-base-height;
-}
-.bar-footer-secondary ~ .content {
-  padding-bottom: ($bar-base-height*2);
-}
+// // Footer bar padding
+// .bar-footer ~ .content {
+//   margin-bottom: $bar-base-height;
+// }
+// .bar-footer-secondary ~ .content {
+//   margin-bottom: ($bar-base-height*2);
+// }
 
-// Tab bar padding
-.bar-tab ~ .content {
-  padding-bottom: $bar-tab-height;
-}
-.bar-footer-secondary-tab ~ .content {
-  padding-bottom: ($bar-tab-height+$bar-base-height);
-}
+// // Tab bar padding
+// .bar-tab ~ .content {
+//   margin-bottom: $bar-tab-height;
+// }
+// .bar-footer-secondary-tab ~ .content {
+//   margin-bottom: ($bar-tab-height+$bar-base-height);
+// }
 
 // Utility classes
 .content-padded {
-  margin: $bar-side-spacing;
+  padding: $bar-side-spacing;
 }
 .text-center {
   text-align: center;

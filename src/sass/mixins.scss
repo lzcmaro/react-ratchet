@@ -73,7 +73,7 @@
       -ms-transform: scale($ratio);
           transform: scale($ratio);
 }
-@mixin scale($ratioX, $ratioY) {
+@mixin scaleXY($ratioX, $ratioY) {
   -webkit-transform: scale($ratioX, $ratioY);
       -ms-transform: scale($ratioX, $ratioY);
           transform: scale($ratioX, $ratioY);
@@ -152,18 +152,19 @@
 // --------------------------------------------------
 @mixin animation-name($name) {
   -webkit-animation-name: $name;
-     -moz-animation-name: $name;
           animation-name: $name;
 }
 @mixin animation-duration($duration) {
   -webkit-animation-duration: $duration;
-     -moz-animation-duration: $duration;
           animation-duration: $duration;
 }
 @mixin animation-direction($direction) {
   -webkit-animation-direction: $direction;
-     -moz-animation-direction: $direction;
           animation-direction: $direction;
+}
+@mixin animation-timing-function($function) {
+  -webkit-animation-timing-function: $function;
+          animation-timing-function: $function;
 }
 
 

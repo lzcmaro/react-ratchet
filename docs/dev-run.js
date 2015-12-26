@@ -2,7 +2,7 @@
 import 'colors';
 import portfinder from 'portfinder';
 import {exec} from 'child-process-promise';
-import ip from 'ip';
+// import ip from 'ip';
 
 portfinder.basePort = 3000;
 
@@ -67,9 +67,11 @@ portfinder.getPorts(2, {}, (portFinderErr, [docsPort, webpackPort]) => {
         process.exit(1);
     }
 
-    runCmd('webpack-dev-server', `nodemon --watch webpack  --exec webpack-dev-server -- --config webpack-docs.config.js --color --port ${webpackPort} --debug --hot --host ${ip.address()}`);
+    runCmd('webpack-dev-server', `nodemon --watch webpack  --exec webpack-dev-server -- --config webpack-docs.config.js --color --port ${webpackPort} --debug --hot`, {
+        maxBuffer: 1000 * 1024
+    });
 
-    runCmd('docs-server', 'nodemon --watch docs --watch src --exec babel-node docs/server.js', {
+    runCmd('docs-server', `nodemon --watch docs --watch src --exec babel-node docs/server.js`, {
         env: {
             PORT: docsPort,
             WEBPACK_DEV_PORT: webpackPort,

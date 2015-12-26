@@ -1,10 +1,10 @@
 const listViewWithButtonInstance = (
   <div>
     <List>
-        <ListItem>item1 <Button>Button</Button></ListItem>
-        <ListItem>item2 <Button ratStyle="primary">Button</Button></ListItem>
-        <ListItem>item3 <Button ratStyle="positive">Button</Button></ListItem>
-        <ListItem>item3 <Button ratStyle="negative">Button</Button></ListItem>
+        <List.Item>item1 <Button>Button</Button></List.Item>
+        <List.Item>item2 <Button ratStyle="primary">Button</Button></List.Item>
+        <List.Item>item3 <Button ratStyle="positive">Button</Button></List.Item>
+        <List.Item>item3 <Button ratStyle="negative">Button</Button></List.Item>
     </List>
   </div>
 );

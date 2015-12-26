@@ -1,9 +1,9 @@
-const buttonsInstance = (
+const formWithInputGroupInstance = (
     <Form ratStyle="listview">
-        <Input type="text" placeholder="Full name" />
+        <Input type="text" placeholder="Full name" icon="person" />
         <Input type="email" placeholder="Email" />
         <Input type="text" placeholder="Address" />
     </Form>
 );
 
-ReactDOM.render(buttonsInstance, mountNode);
+ReactDOM.render(formWithInputGroupInstance, mountNode);

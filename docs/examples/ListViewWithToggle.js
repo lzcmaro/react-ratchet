@@ -1,9 +1,9 @@
 const listViewWithToggleInstance = (
   <div>
     <List>
-        <ListItem>item1 <Toggle/></ListItem>
-        <ListItem>item2 <Toggle/></ListItem>
-        <ListItem>item3 <Toggle/></ListItem>
+        <List.Item>item1 <Toggle/></List.Item>
+        <List.Item>item2 <Toggle/></List.Item>
+        <List.Item>item3 <Toggle/></List.Item>
     </List>
   </div>
 );

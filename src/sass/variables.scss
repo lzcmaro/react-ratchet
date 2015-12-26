@@ -3,10 +3,16 @@
 // --------------------------------------------------
 
 
+// Layout
+// --------------------------------------------------
+$content-spacing: 10px !default;
+
+
 // Type
 // --------------------------------------------------
+$font-color-default: #111 !default;
 $font-family-default: "Helvetica Neue", Helvetica, sans-serif !default;
-$font-size-default: 17px !default;
+$font-size-default: 14px !default;
 $font-weight: 500 !default;
 $font-weight-light: 400 !default;
 $line-height-default: 21px !default;
@@ -16,19 +22,23 @@ $line-height-default: 21px !default;
 // --------------------------------------------------
 
 // Main theme colors
-$primary-color: #428bca !default;
+$primary-color: #0099ff !default;
 $chrome-color:  #fff !default;
 
 // Action colors
 $default-color:  #fff !default;
-$positive-color: #5cb85c !default;
-$negative-color: #d9534f !default;
+$positive-color: #04be02 !default;
+$negative-color: #ef4f4f !default;
 
 
 // Bars
 // --------------------------------------------------
 
+$bar-bg-color: #0099ff !default;
 $bar-base-height:  44px !default;
+$bar-font-size: 18px !default;
+$bar-font-color: #fff !default;
+$bar-tab-bg-color: #fff !default;
 $bar-tab-height:   50px !default;
 $bar-side-spacing: 10px !default;
 
@@ -42,7 +52,9 @@ $card-bg: #fff !default;
 // Buttons
 // --------------------------------------------------
 
-$button-font-size: 12px !default;
+$button-bg-color: #f8f9fa !default;
+$button-font-size: 14px !default;
+$button-font-color: #111 !default;
 
 
 // Transitions
@@ -54,6 +66,7 @@ $timing-fuction: cubic-bezier(.1,.5,.1,1) !default; // Inspired by @c2prods
 // Borders
 // --------------------------------------------------
 
+$border-color: #e5e5e5 ;
 $border-default-width: 1px;
-$border-default: $border-default-width solid #ddd;
+$border-default: $border-default-width solid $border-color;
 $border-radius: 6px !default;

@@ -5,18 +5,18 @@
 .btn {
   position: relative;
   display: inline-block;
-  padding: 6px 8px 7px;
+  padding: 10px 18px;
   margin-bottom: 0; // For input.btn
   font-size: $button-font-size;
   font-weight: $font-weight-light;
   line-height: 1;
-  color: #333;
+  color: $button-font-color;
   text-align: center;
   white-space: nowrap;
   vertical-align: top;
   cursor: pointer;
-  background-color: $chrome-color;
-  border: 1px solid #ccc;
+  background-color: $button-bg-color;
+  border: $border-default;
   border-radius: 3px;
 
   // Active & filled button styles
@@ -29,7 +29,9 @@
   // Disabled styles & filled button active styles
   &:disabled,
   &.disabled {
-    opacity: .6;
+    background-color: transparent;
+    border: $border-default;
+    color: #999;
   }
 }
 
@@ -95,8 +97,23 @@
   // Active states
   &.btn-primary:active,
   &.btn-positive:active,
-  &.btn-negative:active {
+  &.btn-negative:active,
+  &.btn-primary.active,
+  &.btn-positive.active,
+  &.btn-negative.active {
     color: #fff;
+  }
+
+  // Disabled styles & filled button active styles
+  &.btn-primary:disabled,
+  &.btn-positive:disabled,
+  &.btn-negative:disabled,
+  &.btn-primary.disabled,
+  &.btn-positive.disabled,
+  &.btn-negative.disabled {
+    background-color: transparent;
+    border: $border-default;
+    color: #999;
   }
 }
 
@@ -119,9 +136,10 @@
 .btn-block {
   display: block;
   width: 100%;
-  padding: 15px 0;
+  padding: 13px 0 14px;
   margin-bottom: 10px;
   font-size: 18px;
+  border-radius: 4px;
 }
 
 
@@ -141,7 +159,7 @@ input[type="button"] {
 // Generic styles for all badges within default buttons
 .btn .badge {
   margin: -2px -4px -2px 4px;
-  font-size: 12px;
+  font-size: 14px;
   background-color: rgba(0,0,0,.15);
 }
 

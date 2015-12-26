@@ -16,7 +16,7 @@ class NavBar extends React.Component {
             classes = ratchetUtils.getClassSet(this.props),
             child;
 
-        // console.log( "classes", classes );
+        console.log( "render.......", children );
 
     	//从this.props.children取出navbar的title，在渲染时，方便添加特定样式
     	if( Array.isArray(children) ){
@@ -36,7 +36,9 @@ class NavBar extends React.Component {
                 title = children;
                 children = null;
             } 		
-    	}  	
+    	} 
+
+        console.log( 'render.', title) 	
 
         return ( 
         	<nav 

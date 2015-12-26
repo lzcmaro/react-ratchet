@@ -1,9 +1,9 @@
 const listViewWithChevronsInstance = (
   <div>
     <List>
-        <ListItem><ListNav right>item1</ListNav></ListItem>
-        <ListItem><ListNav right>item2</ListNav></ListItem>
-        <ListItem><ListNav right>item3</ListNav></ListItem>
+        <List.Item navigate>item1</List.Item>
+        <List.Item navigate>item2</List.Item>
+        <List.Item navigate>item3</List.Item>
     </List>
   </div>
 );

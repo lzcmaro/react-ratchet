@@ -10,9 +10,16 @@ import ToggleSection from './sections/ToggleSection';
 import BadgeSection from './sections/BadgeSection';
 import IconSection from './sections/IconSection';
 import FormSection from './sections/FormSection';
+import ActionSheetSection from './sections/ActionSheetSection';
+import SelectSection from './sections/SelectSection';
+import ScrollSection from './sections/ScrollSection';
 import PopoverSection from './sections/PopoverSection';
 import ModalSection from './sections/ModalSection';
 import SliderSection from './sections/SliderSection';
+import TabsSection from './sections/TabsSection';
+import PushSection from './sections/PushSection';
+import TypographySection from './sections/TypographySection';
+import PageSection from './sections/PageSection';
 
 class HomePage extends React.Component {
 
@@ -36,16 +43,23 @@ class HomePage extends React.Component {
 
 			            <div className="column lg-units-7 docs-content">
 			            	{/* sections */}
+			            	<PageSection/>
 			            	<BarSection/>
+			            	<TypographySection/>
 			            	<ListViewSection/>
 			            	<ButtonSection/>
 			            	<SegmentedControlSection/>
 			            	<FormSection/>
+			            	<ActionSheetSection/>
+			            	<SelectSection/>
+			            	<ScrollSection/>
 			            	<BadgeSection/>
 			            	<PopoverSection/>
 			            	<ModalSection/>
 			            	<ToggleSection/>
 			            	<SliderSection/>
+			            	<TabsSection/>
+			            	<PushSection/>
 			            	<IconSection/>
 			            </div>	
 					</div>	

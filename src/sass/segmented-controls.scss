@@ -6,7 +6,7 @@
   position: relative;
   display: table;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: $font-weight-light;
   background-color: $chrome-color;
   border: 1px solid #ccc;
@@ -20,7 +20,7 @@
     padding-bottom: 7px;
     overflow: hidden;
     line-height: 1;
-    color: #333;
+    color: #111;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;

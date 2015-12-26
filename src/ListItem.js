@@ -1,27 +1,31 @@
 import React from 'react';
 import classNames from 'classnames';
+import Link from './Link';
 
 let ListItem = React.createClass({
     propTypes:{
-        className: React.PropTypes.string
+        divider: React.PropTypes.bool,
+        navigate: React.PropTypes.bool
     },
 
     getDefaultProps(){
         return {
-            divider:false
+            divider: false,
+            navigate: false
         }
     },
 
     render(){
-        let Component = this.props.eleType || 'li';
-        let itemClass = this.props.divider ? 'table-view-divider' : 'table-view-cell';
+        let {divider, navigate, children, href, push, ...other} = this.props;
+        let navigateClass = 'navigate-right';
+        let itemClass = divider ? 'table-view-divider' : 'table-view-cell';
 
         return (
-            <Component
-                {...this.props}
-                className = {classNames(itemClass,this.props.className)}>
-                {this.props.children}
-            </Component>
+            <li
+                {...other}
+                className = {classNames(itemClass, this.props.className)}>
+                { navigate || href || push ? <Link className={navigate ? navigateClass : ''} href={href} push={push}>{children}</Link> : children }
+            </li>
         )
     }
 });

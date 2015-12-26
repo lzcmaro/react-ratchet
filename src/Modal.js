@@ -55,15 +55,16 @@ let Modal = React.createClass({
     let {
       children
       , animation
+      , style
       , ...props } = this.props;
 
-    let modalStyles = {...this.props.modalStyle, display: 'block'};
+    let modalStyles = {...style, display: 'block'};
     let inClass = { in: props.show && !animation };
 
     return (
 
       <BaseModal
-        {...this.props}
+        {...props}
         show={props.show}
         ref={ref => {
           this._wrapper = (ref && ref.refs.modal);
@@ -77,8 +78,8 @@ let Modal = React.createClass({
         dialogTransitionTimeout={300}
         backdropTransitionTimeout={150}
       >
-        <div className="modal" style={ modalStyles }>
-          <div className="modal-content">{ children }</div>
+        <div className={ratchetUtils.prefix(props)} style={ modalStyles }>
+          <div className={ratchetUtils.prefix(props, 'content')}>{ children }</div>
         </div>
       </BaseModal>
 

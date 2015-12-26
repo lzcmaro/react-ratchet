@@ -1,8 +1,8 @@
 import 'colors';
 import lib from './lib/build';
 import dist from './dist/build';
-import { distRoot, bowerRoot } from './constants';
-import { exec } from './exec';
+// import { distRoot, bowerRoot } from './constants';
+import { exec } from 'child-process-promise';
 
 function forkAndBuildDocs({verbose}) {
   console.log('Building: '.cyan + 'docs'.green);

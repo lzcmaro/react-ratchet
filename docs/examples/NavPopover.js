@@ -1,4 +1,4 @@
-const Trigger = React.createClass({
+const PopoverExample = React.createClass({
   getInitialState() {
     return { show: false };
   },
@@ -20,17 +20,17 @@ const Trigger = React.createClass({
           <NavPopover 
             show={this.state.show} 
             onHide={() => this.setState({ show: false})}
-            popoverStyle={popoverStyle}
+            style={popoverStyle}
             backdropStyle={backdropStyle}
             container={this}
           >
             <NavBar>Popover title</NavBar>
             <List>
-              <ListItem>Item1</ListItem>
-              <ListItem>Item2</ListItem>
-              <ListItem>Item3</ListItem>
-              <ListItem>Item4</ListItem>
-              <ListItem>Item5</ListItem>
+              <List.Item>Item1</List.Item>
+              <List.Item>Item2</List.Item>
+              <List.Item>Item3</List.Item>
+              <List.Item>Item4</List.Item>
+              <List.Item>Item5</List.Item>
             </List>
           </NavPopover>
         </div>
@@ -38,4 +38,4 @@ const Trigger = React.createClass({
   }
 });
 
-ReactDOM.render(<Trigger />, mountNode);
+ReactDOM.render(<PopoverExample />, mountNode);

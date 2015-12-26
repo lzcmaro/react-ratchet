@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import * as RATCHET from './utils/common';
 
@@ -27,6 +28,14 @@ let Slider = React.createClass ({
         isScrolling: undefined,
         startedMoving: undefined,
         slider: undefined
+    },
+    slide(index){
+        let slider = ReactDOM.findDOMNode(this).querySelector('.slide-group');
+        slider.style[RATCHET.getBrowserCapabilities().prefix + 'transition-duration'] = '0s';
+        slider.style[RATCHET.getBrowserCapabilities().transform] = 'translate3d(' + -index * slider.offsetWidth + 'px,0,0)';
+        this.props.onSlide&&this.props.onSlide({
+            index: Math.abs(index)
+        });
     },
     _setSlideNumber(offset){
         let _vars = this._vars;

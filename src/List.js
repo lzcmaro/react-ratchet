@@ -1,22 +1,27 @@
 import React from 'react';
 import classNames from 'classnames';
+import ratchetUtils from './utils/ratchetUtils';
+import ListItem from './ListItem';
 
 let List = React.createClass({
-    propTypes:{
-        className: React.PropTypes.string
+
+    getDefaultProps(){
+        return {
+            ratClass: 'table-view'
+        }
     },
 
     render(){
-        let Component = this.props.eleType || 'ul';
-
         return (
-            <Component
+            <ul
                 {...this.props}
-                className = {classNames('table-view',this.props.className)}>
+                className = {classNames(ratchetUtils.prefix(this.props) ,this.props.className)}>
                 {this.props.children}
-            </Component>
+            </ul>
         )
     }
 });
+
+List.Item = ListItem;
 
 export default List;

@@ -1,4 +1,4 @@
-const buttonsInstance = (
+const titleBarWithButtonsInstance = (
   <div>
     <NavBar>
         <NavButton left>Left</NavButton>
@@ -8,4 +8,4 @@ const buttonsInstance = (
   </div>
 );
 
-ReactDOM.render(buttonsInstance, mountNode);
+ReactDOM.render(titleBarWithButtonsInstance, mountNode);

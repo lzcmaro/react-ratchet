@@ -23,7 +23,8 @@ import '../src/sass/ratchet.scss';
 // import './assets/CodeMirror.css';
 
 
-import './assets/fingerblast.js';
+import './assets/jquery-1.11.3.min.js';
+// import './assets/fingerblast.js';
 import './assets/docs.js';
 
 import './assets/docs.css';
@@ -35,10 +36,15 @@ import './assets/slide-3.jpg';
 import './assets/favicon.ico';
 
 
+import './assets/one.html';
+import './assets/two.html';
+
+
 
 
 //global.CodeMirror = CodeMirror;
 
+//从server端拿回Root.assestBaseUrl，否则在client端访问时，Root.assetBaseUrl为undefined
 Root.assetBaseUrl = window.ASSET_BASE_URL;
 // Root.propData = window.PROP_DATA;
 

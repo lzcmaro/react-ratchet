@@ -1,20 +1,14 @@
 const listViewWithImgMediaInstance = (
     <List>
-        <ListItem>
-            <ListNav right>
-                <Media src="http://placehold.it/42x42">item1</Media>
-            </ListNav>
-        </ListItem>
-        <ListItem>
-            <ListNav right>
-                <Media src="http://placehold.it/42x42">item2</Media>
-            </ListNav>
-        </ListItem>
-        <ListItem>
-            <ListNav right>
-                <Media src="http://placehold.it/42x42">item3</Media>
-            </ListNav>
-        </ListItem>
+        <List.Item navigate>
+            <Media src="http://placehold.it/42x42">item1</Media>
+        </List.Item>
+        <List.Item navigate>
+            <Media src="http://placehold.it/42x42">item2</Media>
+        </List.Item>
+        <List.Item navigate>
+            <Media src="http://placehold.it/42x42">item3</Media>
+        </List.Item>
     </List>
 );
 

@@ -1,6 +1,6 @@
 import 'colors';
 import _ from 'lodash-compat';
-import { exec } from 'child-process-promise';
+import { exec as execCommand } from 'child-process-promise';
 
 let executionOptions = {
   dryRun: false,
@@ -16,8 +16,8 @@ function logWithPrefix(prefix, message) {
   );
 }
 
-function execWrapper(command, options = {}) {
-  let proc = exec(command, options);
+export function exec(command, options = {}) {
+  let proc = execCommand(command, options);
   if (!executionOptions.verbose) {
     return proc;
   }
@@ -35,7 +35,7 @@ function execWrapper(command, options = {}) {
   });
 }
 
-function safeExec(command, options = {}) {
+export function safeExec(command, options = {}) {
   let title = options.title || command;
 
   if (executionOptions.dryRun) {
@@ -43,15 +43,9 @@ function safeExec(command, options = {}) {
     return Promise.resolve();
   }
 
-  return execWrapper(command, options);
+  return exec(command, options);
 }
 
-function setExecOptions(options) {
+export function setExecOptions(options) {
   executionOptions = _.extend({}, executionOptions, options);
 }
-
-export default {
-  exec: execWrapper,
-  safeExec,
-  setExecOptions
-};

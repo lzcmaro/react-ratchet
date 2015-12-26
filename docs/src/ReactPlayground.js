@@ -2,31 +2,37 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 //components
-const NavBar = require('../../src/NavBar');
-const NavButton = require('../../src/NavButton');
-const TabBar = require('../../src/TabBar');
-const StandardBar = require('../../src/StandardBar');
-const SegmentedControl = require('../../src/SegmentedControl');
-const Link = require('../../src/Link');
-const Form = require('../../src/Form');
-const FormButton = require('../../src/FormButton');
-const Input = require('../../src/Input');
-const List = require('../../src/List');
-const ListItem = require('../../src/ListItem');
-const ListNav = require('../../src/ListNav');
-const Card = require('../../src/Card');
-const Media = require('../../src/Media');
-const Button = require('../../src/Button');
-const Toggle = require('../../src/Toggle');
-const Badge = require('../../src/Badge');
-const Icon = require('../../src/Icon');
-const NavPopover = require('../../src/NavPopover');
-const Modal = require('../../src/Modal');
-const Slider = require('../../src/Slider');
-const SliderItem = require('../../src/SliderItem');
+const Page = require('../../src/Page').default;
+const NavBar = require('../../src/NavBar').default;
+const NavButton = require('../../src/NavButton').default;
+const TabBar = require('../../src/TabBar').default;
+const SegmentedControl = require('../../src/SegmentedControl').default;
+const Link = require('../../src/Link').default;
+const Form = require('../../src/Form').default;
+const FormButton = require('../../src/FormButton').default;
+const Select = require('../../src/Select').default;
+const ActionSheet = require('../../src/ActionSheet').default;
+const Scroll = require('../../src/Scroll').default;
+const Input = require('../../src/Input').default;
+const InputGroup = require('../../src/InputGroup').default;
+const List = require('../../src/List').default;
+const ListItem = require('../../src/ListItem').default;
+const Card = require('../../src/Card').default;
+const Media = require('../../src/Media').default;
+const Button = require('../../src/Button').default;
+const Toggle = require('../../src/Toggle').default;
+const Badge = require('../../src/Badge').default;
+const Icon = require('../../src/Icon').default;
+const NavPopover = require('../../src/NavPopover').default;
+const Modal = require('../../src/Modal').default;
+const Slider = require('../../src/Slider').default;
+const SliderItem = require('../../src/SliderItem').default;
 
 
-import babel from 'babel-core/browser';
+import {transform} from 'babel-core';
+import presetEs2015 from 'babel-preset-es2015';
+import presetReact from 'babel-preset-react';
+
 
 const ReactPlayground = React.createClass ({
 
@@ -41,7 +47,9 @@ const ReactPlayground = React.createClass ({
 	getDefaultProps() {
 	    return {
     		transformer(code) {
-        		return babel.transform(code).code;
+        		return transform(code,{
+                    presets: [presetEs2015,presetReact]
+                }).code;
     		}
 		}
 	},

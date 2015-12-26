@@ -23,7 +23,7 @@ if (development) {
     const proxy = httpProxy.createProxyServer();
     const webpackPort = process.env.WEBPACK_DEV_PORT;
 
-    const target = `http://${ip.address()}:${webpackPort}`;
+    const target = `http://127.0.0.1:${webpackPort}`;
     Root.assetBaseUrl = target;
 
     app.get('/assets/*', (req, res) => {

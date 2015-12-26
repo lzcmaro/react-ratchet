@@ -1,13 +1,15 @@
 const listViewWithCardInstance = (
-  <Card>
-    <List>
-        <ListItem>item1</ListItem>
-        <ListItem>item2</ListItem>
-        <ListItem divider>Divider</ListItem>
-        <ListItem>item3</ListItem>
-        <ListItem>item4</ListItem>
-    </List>
-  </Card>
+  <Page>
+    <Page.Content>
+	    <List>
+	        <List.Item>item1</List.Item>
+	        <List.Item>item2</List.Item>
+	        <List.Item divider>Divider</List.Item>
+	        <List.Item>item3</List.Item>
+	        <List.Item>item4</List.Item>
+	    </List>
+	</Page.Content>
+  </Page>
 );
 
 ReactDOM.render(listViewWithCardInstance, mountNode);

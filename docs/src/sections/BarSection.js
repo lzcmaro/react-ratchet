@@ -22,10 +22,6 @@ export default function BarSection() {
 			<ReactPlayground title='Tab bar' desc='Use Ratchicons in the .tab-bar to represent different sections of your app.' codeText={Samples.TabBar} />
 		    {/* Tab bar(labels only) */}
 			<ReactPlayground title='Tab bar(labels only)' desc="If you don't want to use icons, that's okay too. The text will appear larger to use the additional space." codeText={Samples.TabBarLabelsOnly} />
-		
-
-			{/* Standard bars */}
-			<ReactPlayground title='Standard bars' desc='Standard bars are basic fixed elements that can be positioned in four places. These can be used to house buttons, icons, or segmented controls (see following examples).' codeText={Samples.StandardBars} />
 		</div>
 	);
 

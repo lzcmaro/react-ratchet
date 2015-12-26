@@ -18,13 +18,21 @@ const baseConfig = {
     output: undefined,
     externals: undefined,
     resolve: {
-        extensions: ['', '.js', '.jsx', 'css', 'scss']
+        extensions: ['', '.js', '.jsx', 'css', 'scss','.json']
+    },
+    node: {
+      fs: "empty",
+      module : "empty",
+      net :"empty"
     },
     module: {
         loaders: [{
             test: /\.js/,
             loader: jsLoader,
             exclude: /node_modules/
+        }, {
+            test: /\.json$/,
+            loader: 'json'
         }]
     },
     plugins: [
@@ -35,5 +43,9 @@ const baseConfig = {
         })
     ]
 };
+
+// if (options.optimizeMinimize) {
+//     baseConfig.devtool = 'source-map';
+// }
 
 export default baseConfig;

@@ -1,0 +1,23 @@
+const PushExample = React.createClass({
+
+	render() {
+		let pushProps = {href: "/assets/two.html"};
+
+		return (
+			<div>
+			    <NavBar>Push</NavBar>
+			    <div className="content">
+					<Card>
+					   	<List>
+					        <List.Item navigate push={ pushProps }>
+					        	Load new page with push
+					        </List.Item>
+					    </List>
+				  	</Card>
+				</div>
+			</div>
+		)
+	}
+});
+
+ReactDOM.render(<PushExample/>, document);

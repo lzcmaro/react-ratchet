@@ -1,0 +1,54 @@
+//
+// ActionSheet
+// --------------------------------------------------
+
+.actionsheet-backdrop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0,0,0,.3);
+  &.fade { opacity: 0; }
+  &.in { opacity: .5; }
+}
+
+.actionsheet {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height:200px;
+  z-index: 11;
+  background-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .actionsheet-content{
+    @include transition-transform(.3s, opacity 1ms .3s);
+    @include transform(translate3d(0, 100%, 0))
+  }
+  &.in .actionsheet-content{ 
+    @include transition-transform(0.3s);
+    @include transform(translate3d(0, 0, 0))
+  }
+}
+
+.actionsheet-content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-clip: padding-box;
+  outline: 0;
+  z-index: 12;
+}
+
+.actionsheet .table-view{
+  margin-bottom:0;
+}
+
+

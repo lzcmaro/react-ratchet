@@ -1,0 +1,93 @@
+//
+// Layout styles
+// --------------------------------------------------
+
+.page {
+  display: block;
+  width: 100%;
+  min-height: 100％;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  background-color: $chrome-color;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (orientation: portrait){
+  .page { min-height: 420px; }
+}
+@media screen and (orientation: landscape){
+  .page { min-height: 300px; }
+}
+
+.header {
+  position: relative;
+  height: $bar-base-height;
+  background-color: $bar-bg-color;
+  border-bottom: $border-default;
+
+  & > h1, & > .title{
+	  // position: absolute;
+	  display: block;
+	  // width: 100%;
+	  padding: 0;
+	  margin: 0;
+	  font-size: $bar-font-size;
+	  font-weight: $font-weight;
+	  line-height: $bar-base-height;
+	  color: $bar-font-color;
+	  text-align: center;
+	  white-space: nowrap;
+  }
+}
+
+.content {
+  padding: $content-spacing;
+  overflow: visible;
+  overflow-x: hidden;
+
+  // Hack to force all relatively and absolutely positioned elements still render while scrolling
+  // Note: This is a bug for "-webkit-overflow-scrolling: touch"
+  & > * {
+    @include transform(translateZ(0));
+  }
+
+  // Cards with table-views
+  // --------------------------------------------------
+  & > .table-view {
+    border-left: $border-default;
+    border-right: $border-default;
+    border-radius: $border-radius;
+  }
+
+}
+
+// .bar-nav ~ .content {
+//   margin-top: $bar-base-height;
+// }
+// .bar-header-secondary ~ .content {
+//   margin-top: ($bar-base-height*2);
+// }
+
+// // Footer bar padding
+// .bar-footer ~ .content {
+//   margin-bottom: $bar-base-height;
+// }
+// .bar-footer-secondary ~ .content {
+//   margin-bottom: ($bar-base-height*2);
+// }
+
+// Tab bar padding
+// .bar-tab ~ .content {
+//   margin-bottom: $bar-tab-height;
+// }
+// .bar-footer-secondary-tab ~ .content {
+//   margin-bottom: ($bar-tab-height+$bar-base-height);
+// }
+
+
+
+.footer {
+
+}

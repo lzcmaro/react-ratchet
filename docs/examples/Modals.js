@@ -1,4 +1,4 @@
-var App = React.createClass({
+var ModalExample = React.createClass({
 
   getInitialState: function() {
     return { isOpen: false };
@@ -14,7 +14,7 @@ var App = React.createClass({
         <Modal
           show={this.state.isOpen}
           onHide={() => this.setState({isOpen: false})}
-          modalStyle={modalStyle}
+          style={modalStyle}
           backdropStyle={backdropStyle}
           container={this}
           transitionTimeout={3000}>
@@ -33,4 +33,4 @@ var App = React.createClass({
   }
 });
 
-ReactDOM.render(<App/>, mountNode);
+ReactDOM.render(<ModalExample/>, mountNode);

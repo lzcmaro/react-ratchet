@@ -70,6 +70,6 @@ let stylesDecorator = curry((styles, defaultStyle, Component) => {
 });
 
 
-export default {
+export {
 	classesDecorator, stylesDecorator
 };

@@ -1,11 +1,11 @@
-const buttonsInstance = (
+const titleBarWithLinkButtonsAndIconsInstance = (
   <div>
     <NavBar>
-      <NavButton left ratStyle="link" href="#">
+      <NavButton left ratStyle="link" href="javascript:;">
         <Icon ratStyle="left-nav"/>
         Left
       </NavButton>
-      <NavButton right ratStyle="link" href="#">
+      <NavButton right ratStyle="link" href="javascript:;">
         Right
         <Icon ratStyle="right-nav"/>
       </NavButton>
@@ -14,4 +14,4 @@ const buttonsInstance = (
   </div>
 );
 
-ReactDOM.render(buttonsInstance, mountNode);
+ReactDOM.render(titleBarWithLinkButtonsAndIconsInstance, mountNode);

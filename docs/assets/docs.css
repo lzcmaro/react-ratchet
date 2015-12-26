@@ -122,7 +122,7 @@ body {
 }
 
 .docs-title {
-  position: absolute;
+  /*position: absolute;*/
   left: 50%;
   z-index: 20;
   margin-bottom: 0;
@@ -680,7 +680,7 @@ code {
 }
 
 .bar-nav ~ .content {
-  padding: 0;
+  /*padding: 0;*/
 }
 
 .highlight pre {
@@ -721,7 +721,8 @@ code {
   }
 
   .component-example {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
   }
 
   .highlight pre {
@@ -884,25 +885,30 @@ code {
     background-color: #fff;
   }
 
-  .device .content,
+  .device .page {
+    height: 569px;
+    overflow: hidden;
+  }
+
+  /*.device .content,
   .device .bar {
+    position: absolute;
+  }*/
+
+  .device .bar-tab, .device .bar.bar-footer {
     position: absolute;
   }
 
-  .modal-content .bar{
+  /*.modal-content .bar, .popover-content .bar{
     position: static;
-  }
+  }*/
 
-  .popover-content .bar{
-    position: static;
-  }
-
-  .device .content {
-    /*top: 44px;
+  /*.device .content {
+    top: 44px;
     right: 0;
     bottom: 0;
-    left: 0;*/
-  }
+    left: 0;
+  }*/
 }
 @media screen and (min-width: 1200px) {
   .device {

@@ -1,0 +1,26 @@
+ {
+  apps : [
+    {
+      name      : "React-Components",
+      script    : "docs/server.js",
+      "exec_interpreter": "/usr/local/node/bin/babel-node",
+      "exec_mode"       : "fork_mode",
+      env: {
+        COMMON_VARIABLE: "true"
+      },
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+  deploy : {
+    production : {
+      user : "root",
+      host : "112.74.211.77",
+      ref  : "origin/master",
+      repo : "git@git.mysoft.com.cn:cloudcommunity/react-components.git",
+      path : "/webser/www/react-components",
+      "post-deploy" : "npm run docs-build && NODE_ENV=production && pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}

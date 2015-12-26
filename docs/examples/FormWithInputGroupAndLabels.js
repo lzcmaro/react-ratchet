@@ -1,4 +1,4 @@
-const buttonsInstance = (
+const formWithInputGruopAndLabelsInstance = (
     <Form ratStyle="listview">
         <Input type="text" placeholder="Mister Ratchet" label="Full name" />
         <Input type="email" placeholder="ratchetframework@gmail.com" label="Email"/>
@@ -6,4 +6,4 @@ const buttonsInstance = (
     </Form>
 );
 
-ReactDOM.render(buttonsInstance, mountNode);
+ReactDOM.render(formWithInputGruopAndLabelsInstance, mountNode);

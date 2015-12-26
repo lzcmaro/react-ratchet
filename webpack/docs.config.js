@@ -2,9 +2,9 @@ import _ from 'lodash-compat';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import baseConfig, {options, jsLoader} from './base.config';
-import ip from 'ip';
+// import ip from 'ip';
 
-const webpackDevServerAddress = `http://${ip.address()}:${options.port}`;
+const webpackDevServerAddress = `http://127.0.0.1:${options.port}`;
 const cssSourceMap = options.debug ? '?sourceMap' : '';
 const reactHot = options.debug ? 'react-hot!' : '';
 
@@ -14,6 +14,7 @@ const devEntryBundle = [
     `webpack-dev-server/client?${webpackDevServerAddress}`,
     entryFile
 ];
+
 
 baseConfig.plugins.push(new ExtractTextPlugin('[name].css'));
 if (options.debug) {
@@ -35,25 +36,24 @@ export default _.extend({}, baseConfig, {
     },
 
     module: {
-        noParse: /babel-core\/browser/,
         loaders: [{
             test: /\.js/,
             loader: `${reactHot}${jsLoader}`,
-            exclude: /node_modules|Samples\.js/
+            exclude: /node_modules|Samples\.js|jquery-1\.11\.3\.min\.js|fingerblast\.js|docs\.js/
         }, {
             test: /Samples\.js/,
             loader: `${reactHot}transform?brfs!${jsLoader}`
         }, {
-            test: /\.css/,
-            loader: ExtractTextPlugin.extract('style', `css${cssSourceMap}`)
+            test: /jquery-1\.11\.3\.min\.js|fingerblast\.js|docs\.js|docs\.css/,
+            loader: 'file?name=[name].[ext]'
+        }, {
+            test: /\.json$/,
+            loader: 'json'
         }, {
             test: /\.scss|\.sass$/,
             loader: ExtractTextPlugin.extract('style', `css${cssSourceMap}!sass${cssSourceMap}`)
         }, {
-            test: /\.jpe?g$|\.gif$|\.png|\.ico$/,
-            loader: 'file?name=[name].[ext]'
-        }, {
-            test: /\.eot$|\.ttf$|\.svg$|\.woff2?$/,
+            test: /\.jpe?g$|\.gif$|\.png|\.ico$|\.eot$|\.ttf$|\.svg$|\.woff2?$|\.html$|\.shtml$/,
             loader: 'file?name=[name].[ext]'
         }]
     }

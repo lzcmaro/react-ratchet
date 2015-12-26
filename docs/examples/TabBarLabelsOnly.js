@@ -1,4 +1,4 @@
-const buttonsInstance = (
+const tabbarLabelsOnlyInstance = (
   <div>
     <TabBar>
         <TabBar.Item active href="#">
@@ -14,4 +14,4 @@ const buttonsInstance = (
   </div>
 );
 
-ReactDOM.render(buttonsInstance, mountNode);
+ReactDOM.render(tabbarLabelsOnlyInstance, mountNode);

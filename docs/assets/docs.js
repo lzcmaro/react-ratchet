@@ -21,7 +21,8 @@ $(function () {
   var bod;
   var eventListeners;
   var toolbarToggle;
-  var $iwindow
+  var $iwindow;
+  var loaded = false;
 
 
   var initialize = function () {
@@ -43,18 +44,22 @@ $(function () {
     toolbarToggle          = $('.js-docs-component-toolbar');
     $iwindow               = $("#iwindow");
 
-    console.log( "initialize." )
-
-    $(contentSection[0]).addClass('active').find('.component-example').children().appendTo( $iwindow );
-
+    // console.log( "initialize." )
+    if( !loaded ){
+      loaded = true;
+      $(contentSection[0]).addClass('active').find('.component-example').children().appendTo( $iwindow );
+    }
+    
     // Device placement
-    if (windowWidth >= 768 && device.offset()) {
+    if (windowWidth >= 768 && device.offset()) {   
       device.initialLeft   = device.offset().left;
       device.initialTop    = device.initialTop || device.offset().top;
       device.dockingOffset = -60;
+    }else{
+      $iwindow.children().appendTo( $('.component.active').find('.component-example') ); 
     }
 
-    checkDesktopContent();
+    // checkDesktopContent();
     calculateScroll();
     calculateToggle();
 
@@ -66,9 +71,9 @@ $(function () {
   var addEventListeners = function () {
     eventListeners = true;
 
-    device.on('click', function (e) {
-      e.preventDefault();
-    });
+    // device.on('click', function (e) {
+    //   e.preventDefault();
+    // });
 
     // Mobile navigation
     $('.js-docs-nav-trigger').on('click', function () {
@@ -111,20 +116,20 @@ $(function () {
     });
 
     win
-      .off()
+      .off('scroll')
       .on('scroll', calculateScroll)
       .on('scroll', calculateToggle);
   };
 
-  var checkDesktopContent = function () {
+  // var checkDesktopContent = function () {
     
-    if (windowWidth <= 768) {
-      var content = $('.content');
-      if (content.length > 1) {
-        $(content[0]).remove();
-      }
-    }
-  };
+  //   if ($(window).width() <= 768) {
+  //     var content = $('.content');
+  //     if (content.length > 1) {
+  //       $(content[0]).remove();
+  //     }
+  //   }
+  // };
 
   var calculateScroll = function () {
     // if small screen don't worry about this
@@ -143,10 +148,10 @@ $(function () {
     }
 
     if ((device.initialTop - currentTop) <= device.dockingOffset) {
-      device[0].className = 'device device-fixed';
+      device.addClass('device-fixed');
       device.css({ top: device.dockingOffset });
     } else {
-      device[0].className = 'device';
+      device.removeClass('device-fixed');
       device[0].setAttribute('style', '');
     }
 
@@ -182,7 +187,7 @@ $(function () {
     var currentTop   = win.scrollTop();
     var headerHeight = $('.docs-sub-header').outerHeight();
 
-    if (currentTop >= headerHeight) {
+    if (windowWidth >= 768 && currentTop >= headerHeight) {
       toolbarToggle.addClass('visible');
     } else if (currentTop <= headerHeight) {
       toolbarToggle.removeClass('visible');
